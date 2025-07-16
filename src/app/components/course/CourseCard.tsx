@@ -15,7 +15,7 @@ const CourseCard = ({
   duration = "3 months",
 }: CourseCardProps) => {
   return (
-    <div className="bg-[#FFF5F0] rounded-xl flex flex-col gap-3 py-4 max-w-[230px]">
+    <div className="bg-[#FFF5F0] rounded-xl flex flex-col gap-3 py-4 max-w-[230px] border-b-2 border-b-[#006A62]">
       {typeof Icon === "string" ? (
         <Image src={Icon} alt="course_image" fill className="object-cover" />
       ) : (
