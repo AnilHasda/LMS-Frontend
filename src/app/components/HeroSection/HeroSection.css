@@ -2,22 +2,19 @@
 height:300px;
 width:300px;
 position: absolute;
-background-color: rgb(197, 188, 188);
 top:60%;
 transform:translateY(-50%);
 left:-20%;
-border-radius: 10px;
 }
-.hero-card::before{
-    content:"Learn in a simple way";
+/* .hero-card::before{
+    content:"";
     position: absolute;
+    background-color: #FFF5F0;
     height: 100%;
     width: 100%;
-    left: 60%;
-    top: 100%;
-    transform: translate(-50%,-50%);
     color:rgb(48, 39, 39);
     font-weight:bold;
     font-size: x-large;
     transform-origin: center ;
-}
+    z-index: 5;
+} */

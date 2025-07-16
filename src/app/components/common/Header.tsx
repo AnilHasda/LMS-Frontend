@@ -20,13 +20,13 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full h-20 z-10 flex justify-between items-center bg-[#FFF5F0] px-30 border-b border-[#006A62]">
+    <header className="w-full h-20 z-10 flex justify-between items-center bg-[#FFF5F0] px-30 border-b border-[#FF8C5A]">
       <nav
         className="flex gap-20"
         role="navigation"
         aria-label="Main Navigation"
       >
-        <Link href="/" className="text-xl font-bold text-[#006A62]">
+        <Link href="/" className="text-xl font-bold text-[#FF8C5A]">
           MyLMS
         </Link>
 
