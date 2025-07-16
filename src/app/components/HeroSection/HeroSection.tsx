@@ -13,10 +13,23 @@ import { LiaLaptopCodeSolid } from "react-icons/lia";
 const HeroSectionCard = () => {
   return (
     <div
-      className="relative min-h-screen w-[500px] bg-[#006A62] text-white rounded-sm border-4 border-[#FF8C5A] border-t-0 border-b-0"
+      className="relative h-[400px] md:min-h-screen w-full md:w-[400px] xl:w-[500px] bg-[#006A62] text-white rounded-sm border-4 border-[#FF8C5A] border-t-0 border-b-0 top-0"
       role="main-card-container"
       aria-label="hero-section-card"
     >
+      {/* icon section */}
+      <div className="absolute text-4xl mx-auto z-10 w-full h-full">
+        <LiaLaptopCodeSolid className="absolute left-20 top-36 text-[#FF8C5A] animate-pulse" />
+        <AiOutlinePython
+          className="absolute top-60 right-20 text-[gold] animate-spin"
+          style={{ animationDuration: "5s" }}
+        />
+        <TbBrandJavascript
+          className="absolute text-white bottom-60 right-40 animate-ping"
+          style={{ animationDuration: "3s" }}
+        />
+        <SiScratch className="absolute text-[#FF8C5A] left-20 bottom-10 animate-bounce" />
+      </div>
       {/* right section of hero section circle */}
       <div className="absolute h-24 w-24 rounded-full  right-16 bottom-10 overflow-hidden rotate-45">
         {[...new Array(23)].map((ele: any) => {
@@ -24,13 +37,13 @@ const HeroSectionCard = () => {
         })}
       </div>
       <div
-        className="group z-20 hero-card rounded-3xl flex flex-col gap-5 shadow-2xl bg-cover bg-center bg-no-repeat transition-all duration-500 hover:scale-105"
+        className="group absolute h-[200px] w-[200px] lg:h-[300px] lg:w-[300px] md:top-[60%] left-[50%] top-[50%] translate-x-[-50%] md:left-[-20%] translate-y-[-50%] z-20 hero-card rounded-3xl flex flex-col gap-5 shadow-2xl bg-cover bg-center bg-no-repeat transition-all duration-500 hover:scale-105"
         style={{ backgroundImage: "url('/logo/logo.png')" }}
       >
         {/* this is for border  */}
-        <div className="absolute -top-3 -left-3 w-12 h-12 border-l-4 border-t-4  border-l-[#006A62] border-t-[#006A62]  transition-all duration-500 rounded-tl-3xl group-hover:scale-110"></div>
+        <div className="absolute -top-3 -left-3 w-12 h-12 border-l-4 border-t-4 border-l-[#FF8C5A] border-t-[#FF8C5A] md:border-l-[#006A62] md:border-t-[#006A62]  transition-all duration-500 rounded-tl-3xl group-hover:scale-110"></div>
         <div className="absolute -top-3 -right-3 w-12 h-12 border-r-4 border-t-4  border-r-[#FF8C5A] border-t-[#FF8C5A]  transition-all duration-500 rounded-tr-3xl group-hover:scale-110"></div>
-        <div className="absolute -bottom-3 -left-3 w-12 h-12 border-l-4 border-b-4  border-l-[#006A62] border-b-[#006A62]  transition-all duration-500 rounded-bl-3xl group-hover:scale-110"></div>
+        <div className="absolute -bottom-3 -left-3 w-12 h-12 border-l-4 border-b-4 border-l-[#FF8C5A] border-b-[#FF8C5A] md:border-l-[#006A62] md:border-b-[#006A62]  transition-all duration-500 rounded-bl-3xl group-hover:scale-110"></div>
         <div className="absolute -bottom-3 -right-3 w-12 h-12 border-r-4 border-b-4  border-r-[#FF8C5A] border-b-[#FF8C5A]  transition-all duration-500 rounded-br-3xl group-hover:scale-110"></div>
         {/* {[...new Array(15)].map((ele: any) => {
           return (
@@ -73,7 +86,7 @@ const StudentProfile = () => {
 };
 export const HeroSection = () => {
   return (
-    <section className="min-h-[calc(100vh-80px)] overflow-hidden bg-[#FFF5F0] px-30 flex items-center">
+    <section className="relative min-h-[calc(100vh-80px)] w-full max-w-[1600px] bg-[#FFF5F0] px-5 lg:px-30 md:px-20 flex flex-col md:flex-row items-center">
       <div className="z-10 mx-auto py-20 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         {/* Text Content */}
         <div>
@@ -110,15 +123,8 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-      {/* Image card section*/}
-      <div className="absolute right-10 top-0 z-10">
-        {/* icon section */}
-        <div className="absolute text-4xl mx-auto z-10 w-full h-full">
-          <LiaLaptopCodeSolid className="absolute left-20 top-36 text-[#FF8C5A] animate-pulse" />
-          <AiOutlinePython className="absolute top-60 right-20 text-[gold] animate-spin"style={{animationDuration:"5s"}} />
-          <TbBrandJavascript className="absolute text-white bottom-60 right-40 animate-ping" style={{animationDuration:"3s"}}/>
-          <SiScratch className="absolute text-[#FF8C5A] left-20 bottom-10 animate-bounce" />
-        </div>
+      {/* Image card /right section*/}
+      <div className="relative w-full  md:absolute md:right-0 xl:right-10 top-[-13%] z-10">
         <HeroSectionCard />
       </div>
     </section>

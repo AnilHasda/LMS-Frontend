@@ -6,7 +6,7 @@ import OurServices from "./components/ourServices/OurServices";
 
 const Home = () => {
   return (
-    <div>
+    <div className="max-w-[1600px] mx-auto">
       {/* Course section */}
       <HeroSection />
       <section>

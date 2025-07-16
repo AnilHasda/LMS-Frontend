@@ -1,21 +1,23 @@
+"use client";
 import React from "react";
 import { Sparkles } from "lucide-react";
 import Image from "next/image";
 import "./OusrServices.css";
-import { FaQuoteLeft } from "react-icons/fa";
-import { FaQuoteRight } from "react-icons/fa";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+
 const OurServices = () => {
   const services = [
     "Web Development",
     "App Development",
     "Coding Class",
-    "Graphics Desing",
+    "Graphics Design",
     "Workshop",
     "IT Consultant",
   ];
+
   return (
     <section className="my-20 mb-32 mt-32">
-      {/* heading or  intro section */}
+      {/* Heading */}
       <div className="text-center">
         <div className="flex gap-2 items-center justify-center">
           <span className="text-[#FF8C5A] text-sm animate-bounce">
@@ -27,13 +29,14 @@ const OurServices = () => {
           We provide quality services
         </h1>
       </div>
-      {/* main div for other two section */}
-      <div className="flex gap-10 overflow-hidden px-30 mt-10">
-        {/* intro section */}
-        <div className="flex-1 italic text-justify">
+
+      {/* Main Content Area */}
+      <div className="flex flex-col lg:flex-row gap-10 overflow-hidden px-5 md:px-20 xl:px-30 mt-10">
+        {/* Intro (Text) Section */}
+        <div className="order-3 lg:order-1 flex-1 italic text-justify">
           <div className="flex">
-            <FaQuoteLeft/>
-            <span>
+            <FaQuoteLeft />
+            <span className="pl-2">
               We specialize in turning ideas into impactful digital experiences.
               From building stunning websites and mobile apps to offering expert
               coding classes, graphic design, and hands-on workshops — our
@@ -43,7 +46,7 @@ const OurServices = () => {
           </div>
 
           <div className="pt-5 flex">
-            <span>
+            <span className="pr-2">
               Whether you're a business looking to elevate your online presence
               or an individual ready to upskill, we blend technical excellence
               with creative thinking to deliver fast, reliable, and future-ready
@@ -52,7 +55,8 @@ const OurServices = () => {
             </span>
             <FaQuoteRight />
           </div>
-          {/* CEO message */}
+
+          {/* CEO Message */}
           <div className="flex gap-5 items-center mt-10">
             <div className="relative h-12 w-12 rounded-full bg-amber-300 overflow-hidden">
               <Image
@@ -62,25 +66,27 @@ const OurServices = () => {
                 className="object-cover object-center"
               />
             </div>
-            <p className="not-italic">-Message from CEO</p>
+            <p className="not-italic">- Message from CEO</p>
           </div>
         </div>
-        {/* left section */}
-        <section className="flex-1">
+
+        {/* Services List */}
+        <section className="flex-1 order-2">
           <ul className="main-list list-none">
-            {services.map((ele: any, index: number) => {
-              return <li key={index}>{ele}</li>;
-            })}
+            {services.map((ele, index) => (
+              <li key={index}>{ele}</li>
+            ))}
           </ul>
         </section>
-        {/* right section */}
-        <section className="flex-1 flex w-full items-center">
-          <div className=" group relative bg-[#006A62] rounded-3xl h-[300px] w-full hover:scale-105 transition-all duration-500">
-            {/* this is for border  */}
-            <div className="absolute -top-3 -left-3 w-12 h-12 border-l-4 border-t-4  border-l-[#006A62] border-t-[#006A62]  transition-all duration-500 rounded-tl-3xl group-hover:scale-110"></div>
-            <div className="absolute -top-3 -right-3 w-12 h-12 border-r-4 border-t-4  border-r-[#006A62] border-t-[#006A62]  transition-all duration-500 rounded-tr-3xl group-hover:scale-110"></div>
-            <div className="absolute -bottom-3 -left-3 w-12 h-12 border-l-4 border-b-4  border-l-[#006A62] border-b-[#006A62]  transition-all duration-500 rounded-bl-3xl group-hover:scale-110"></div>
-            <div className="absolute -bottom-3 -right-3 w-12 h-12 border-r-4 border-b-4  border-r-[#006A62] border-b-[#006A62]  transition-all duration-500 rounded-br-3xl group-hover:scale-110"></div>
+
+        {/* Right Card Box */}
+        <section className="flex-1 order-1 lg:order-3 flex w-full items-center">
+          <div className="group relative bg-[#006A62] rounded-3xl flex-1 lg:h-[300px] w-full hover:scale-105 transition-all duration-500">
+            {/* Decorative Borders */}
+            <div className="absolute -top-3 -left-3 w-12 h-12 border-l-4 border-t-4 border-l-[#006A62] border-t-[#006A62] transition-all duration-500 rounded-tl-3xl group-hover:scale-110"></div>
+            <div className="absolute -top-3 -right-3 w-12 h-12 border-r-4 border-t-4 border-r-[#006A62] border-t-[#006A62] transition-all duration-500 rounded-tr-3xl group-hover:scale-110"></div>
+            <div className="absolute -bottom-3 -left-3 w-12 h-12 border-l-4 border-b-4 border-l-[#006A62] border-b-[#006A62] transition-all duration-500 rounded-bl-3xl group-hover:scale-110"></div>
+            <div className="absolute -bottom-3 -right-3 w-12 h-12 border-r-4 border-b-4 border-r-[#006A62] border-b-[#006A62] transition-all duration-500 rounded-br-3xl group-hover:scale-110"></div>
           </div>
         </section>
       </div>

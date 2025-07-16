@@ -3,10 +3,10 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="h-auto my-5 flex gap-20 px-30 py-10">
+    <div className="h-auto my-5 flex flex-col lg:flex-row gap-20 px-5 md:px-20 lg:px-30 py-10">
       {/* about us profile section */}
-      <section className="flex-1 flex h-auto ">
-        <div className=" group relative bg-[#006A62] flex-1 rounded-3xl">
+      <section className="order-2 w-full lg:h-auto lg:order-1 flex-1 flex   ">
+        <div className=" group relative h-[300px] sm:h-[500px] bg-[#006A62] flex-1 rounded-3xl">
           {/* this is for border  */}
           <div className="absolute -top-3 -left-3 w-12 h-12 border-l-4 border-t-4  border-l-[#006A62] border-t-[#006A62]  transition-all duration-500 rounded-tl-3xl group-hover:scale-110"></div>
           <div className="absolute -top-3 -right-3 w-12 h-12 border-r-4 border-t-4  border-r-[#006A62] border-t-[#006A62]  transition-all duration-500 rounded-tr-3xl group-hover:scale-110"></div>
@@ -15,7 +15,7 @@ const AboutUs = () => {
         </div>
       </section>
       {/* about us description section */}
-      <section className="flex-1 text-sm">
+      <section className="order-1 lg:order-2 flex-1 text-sm">
         <div className="flex items-center gap-2">
           <span className="text-[#FF8C5A] text-sm animate-bounce">
             <Sparkles />

@@ -3,7 +3,7 @@ import { AiOutlinePython } from "react-icons/ai";
 import CourseCard from "./CourseCard";
 const Courses = () => {
   return (
-    <section className="w-full my-20 px-30">
+    <section className="w-full my-20 px-5 md:px-20 lg:px-30">
       {/* intro */}
       <div className="flex gap-2 justify-center">
         <span className="text-[#FF8C5A] text-sm animate-bounce">
@@ -25,7 +25,7 @@ const Courses = () => {
         </span> */}
       </p>
       {/* course card section */}
-      <div className="flex gap-5 mt-10">
+      <div className="flex flex-wrap justify-center gap-5 mt-10">
         {[...new Array(5)].map((ele: any, index: number) => {
           return (
             <CourseCard
