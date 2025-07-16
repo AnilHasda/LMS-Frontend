@@ -15,18 +15,20 @@ const CourseCard = ({
   duration = "3 months",
 }: CourseCardProps) => {
   return (
-    <div className="bg-[#FFF5F0] rounded-xl flex flex-col gap-3 py-4 max-w-[230px] border-b-2 border-b-[#006A62]">
+    <div className=" group bg-[#FFF5F0] cursor-pointer rounded-xl flex flex-col gap-3 py-4 max-w-[230px] border-b-2 border-b-[#006A62] hover:text-white hover:bg-[#006A62]  hover:border-b hover:border-b-[#FF8C5A] transition-all duration-500 hover:shadow-2xl hover:scale-110 ">
       {typeof Icon === "string" ? (
         <Image src={Icon} alt="course_image" fill className="object-cover" />
       ) : (
-        <Icon className="text-[#006A62] mx-auto text-6xl" />
+        <Icon className="text-[#006A62] mx-auto text-6xl group-hover:text-white transition-colors duration-500" />
       )}
-    
-      <h2 className="pt-2 font-bold text-[16px] text-center">{heading}</h2>
-       <div className="px-8">
-      <p className="pb-2 text-gray-600">{description}</p>
-      <p className="text-sm text-[#006A62]">level: {level}</p>
-      <p className="text-sm text-[#006A62]">duration: {duration}</p>
+
+      <h2 className="pt-2 font-bold text-[16px] text-center group-hover:underline transition-all duration-500">
+        {heading}
+      </h2>
+      <div className="px-8">
+        <p className="pb-2 text-gray-600 group-hover:text-white transition-colors duration-500">{description}</p>
+        <p className="text-sm text-[#006A62] group-hover:text-white transition-colors duration-500 pt-3 pb-1">level: {level}</p>
+        <p className="text-sm text-[#006A62] group-hover:text-white transition-colors duration-500">duration: {duration}</p>
       </div>
     </div>
   );

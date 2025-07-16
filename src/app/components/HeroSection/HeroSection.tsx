@@ -24,7 +24,7 @@ const HeroSectionCard = () => {
         })}
       </div>
       <div
-        className="group z-20 hero-card rounded-3xl flex flex-col gap-5 shadow-2xl bg-cover bg-center bg-no-repeat"
+        className="group z-20 hero-card rounded-3xl flex flex-col gap-5 shadow-2xl bg-cover bg-center bg-no-repeat transition-all duration-500 hover:scale-105"
         style={{ backgroundImage: "url('/logo/logo.png')" }}
       >
         {/* this is for border  */}

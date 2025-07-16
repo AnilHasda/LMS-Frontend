@@ -29,6 +29,7 @@ const Courses = () => {
         {[...new Array(5)].map((ele: any, index: number) => {
           return (
             <CourseCard
+              key={index}
               icon={AiOutlinePython}
               heading="Python Programming"
               level="Beginner"

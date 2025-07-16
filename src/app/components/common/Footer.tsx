@@ -32,7 +32,7 @@ const socialMedia = [FaFacebook, FaSquareXTwitter, FaLinkedin, FaGithub];
 const Footer = () => {
   return (
     <div className="bg-[#FFF5F0] relative  h-auto">
-      {/* additional information or search section */}
+      {/*  */}
       <div className="absolute h-20 w-1/2 bg-[#FF8C5A] -top-10 left-[50%] translate-x-[-50%] text-white grid place-content-center">
         <div className="flex gap-2 animate-bounce">
             <span>
@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=" h-14 flex justify-between items-center px-30 ">
-        <span>© 2024 codeskinnovation. All rights reserved.</span>
+        <span>© 2025 codeskinnovation. All rights reserved.</span>
         <div className="flex gap-10">
           {privacyPolicy.map((ele: string, index: number) => {
             return (
