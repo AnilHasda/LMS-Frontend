@@ -5,12 +5,25 @@ import Link from "next/link";
 import "./HeroSection.css";
 import ButtonWithBg from "../ui/ButtonWithBg";
 import { Star } from "lucide-react";
-import { Arapey } from "next/font/google";
 import { AiOutlinePython } from "react-icons/ai";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiScratch } from "react-icons/si";
 import { LiaLaptopCodeSolid } from "react-icons/lia";
+import { RegistrationBtn } from "../authcomponents/Registration";
+import useFetchData from "@/app/hooks/FetchData";
+import { useEffect } from "react";
 const HeroSectionCard = () => {
+  const { getData, result, responseError, loading } = useFetchData();
+  useEffect(() => {
+    (async () => {
+      await getData("/auth/test");
+    })();
+  }, []);
+  useEffect(() => {
+    if (result) console.log({ result });
+    if (responseError) console.log({ error: responseError });
+    if (loading) console.log({ loading });
+  }, [result, responseError, loading]);
   return (
     <div
       className="relative h-[400px] md:min-h-screen md:w-[300px] lg:w-[400px] xl:w-[500px] bg-[#006A62] text-white rounded-sm border-4 border-[#FF8C5A] border-t-0 border-b-0"
@@ -32,8 +45,10 @@ const HeroSectionCard = () => {
       </div>
       {/* right section of hero section circle */}
       <div className="absolute h-24 w-24 rounded-full  right-16 bottom-10 overflow-hidden rotate-45">
-        {[...new Array(23)].map((ele: any,index:number) => {
-          return <div key={index} className="h-[2px] w-full bg-gray-300 mb-1"></div>;
+        {[...new Array(23)].map((ele: any, index: number) => {
+          return (
+            <div key={index} className="h-[2px] w-full bg-gray-300 mb-1"></div>
+          );
         })}
       </div>
       <div
@@ -107,6 +122,7 @@ export const HeroSection = () => {
           </p>
           {/* button section */}
           <div className="mt-8 flex space-x-4">
+            <RegistrationBtn />
             <Link href="/courses">
               <ButtonWithBg background="#006A62">Get Started</ButtonWithBg>
             </Link>

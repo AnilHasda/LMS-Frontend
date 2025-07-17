@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react"; // You can use any icon set like Lucide or Heroicons
 import clsx from "clsx";
-import ButtonWithBg from "../ui/ButtonWithBg";
 import ButtonWithBorder from "../ui/ButtonWithBorder";
+import { RegistrationBtn } from "../authcomponents/Registration";
+import { LoginBtn } from "../authcomponents/LoginBtn";
 const navLinks = [
   { href: "/", label: "Home+" },
   { href: "/courses", label: "Courses+" },
@@ -89,10 +90,10 @@ const Header = () => {
       {/* login and register buttons */}
       <div className="relative flex gap-5 md:gap-10 z-30 lg:mr-[8%] items-center">
         <div className="hidden sm:block">
-          <ButtonWithBorder>log in</ButtonWithBorder>
+          <LoginBtn />
         </div>
         <div>
-          <ButtonWithBg background="#FF8C5A">Register</ButtonWithBg>
+          <RegistrationBtn />
         </div>
         <div
           className="h-10 w-10 bg-[#006A62] rounded-sm text-white grid place-content-center md:hidden"
