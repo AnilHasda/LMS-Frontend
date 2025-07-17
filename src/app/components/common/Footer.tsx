@@ -83,6 +83,7 @@ const Footer = () => {
           {privacyPolicy.map((ele: string, index: number) => {
             return (
               <Link
+              key={index}
                 href="#"
                 className="hover:text-[#006A62] transition-colors duration-500 font-semibold"
               >

@@ -13,31 +13,31 @@ import { LiaLaptopCodeSolid } from "react-icons/lia";
 const HeroSectionCard = () => {
   return (
     <div
-      className="relative h-[400px] md:min-h-screen w-full md:w-[400px] xl:w-[500px] bg-[#006A62] text-white rounded-sm border-4 border-[#FF8C5A] border-t-0 border-b-0 top-0"
+      className="relative h-[400px] md:min-h-screen md:w-[300px] lg:w-[400px] xl:w-[500px] bg-[#006A62] text-white rounded-sm border-4 border-[#FF8C5A] border-t-0 border-b-0"
       role="main-card-container"
       aria-label="hero-section-card"
     >
       {/* icon section */}
-      <div className="absolute text-4xl mx-auto z-10 w-full h-full">
-        <LiaLaptopCodeSolid className="absolute left-20 top-36 text-[#FF8C5A] animate-pulse" />
+      <div className="absolute text-4xl mx-auto w-full h-full">
+        <LiaLaptopCodeSolid className="absolute left-10 top-10 lg:left-20 md:top-36 text-[#FF8C5A] animate-pulse" />
         <AiOutlinePython
           className="absolute top-60 right-20 text-[gold] animate-spin"
           style={{ animationDuration: "5s" }}
         />
         <TbBrandJavascript
-          className="absolute text-white bottom-60 right-40 animate-ping"
+          className="absolute text-white top-16 md:top-auto  md:bottom-60 right-10 lg:right-40 animate-ping"
           style={{ animationDuration: "3s" }}
         />
-        <SiScratch className="absolute text-[#FF8C5A] left-20 bottom-10 animate-bounce" />
+        <SiScratch className="absolute text-[#FF8C5A] left-10 lg:left-20 bottom-10 animate-bounce" />
       </div>
       {/* right section of hero section circle */}
       <div className="absolute h-24 w-24 rounded-full  right-16 bottom-10 overflow-hidden rotate-45">
-        {[...new Array(23)].map((ele: any) => {
-          return <div className="h-[2px] w-full bg-gray-300 mb-1"></div>;
+        {[...new Array(23)].map((ele: any,index:number) => {
+          return <div key={index} className="h-[2px] w-full bg-gray-300 mb-1"></div>;
         })}
       </div>
       <div
-        className="group absolute h-[200px] w-[200px] lg:h-[300px] lg:w-[300px] md:top-[60%] left-[50%] top-[50%] translate-x-[-50%] md:left-[-20%] translate-y-[-50%] z-20 hero-card rounded-3xl flex flex-col gap-5 shadow-2xl bg-cover bg-center bg-no-repeat transition-all duration-500 hover:scale-105"
+        className="group absolute h-[200px] w-[200px] lg:h-[300px] lg:w-[300px] md:top-[60%] left-[50%] top-[50%] translate-x-[-50%] md:left-[10%] translate-y-[-50%] z-20 hero-card rounded-3xl flex flex-col gap-5 shadow-2xl bg-cover bg-center bg-no-repeat transition-all duration-500 hover:scale-105"
         style={{ backgroundImage: "url('/logo/logo.png')" }}
       >
         {/* this is for border  */}
@@ -124,7 +124,7 @@ export const HeroSection = () => {
         </div>
       </div>
       {/* Image card /right section*/}
-      <div className="relative w-full  md:absolute md:right-0 xl:right-10 top-[-13%] z-10">
+      <div className="relative w-full md:w-auto  md:absolute md:right-0 xl:right-10 top-[-13%] z-10">
         <HeroSectionCard />
       </div>
     </section>

@@ -8,6 +8,7 @@ const FooterComponents = ({ data }: { data: string[] }) => {
         {data.map((ele: string, index: number) => {
           return index === 0 ? (
             <li
+              key={index}
               className={clsx(
                 "hover:text-[#006A62] transition-colors duration-500 font-bold text-xl"
               )}
@@ -16,6 +17,7 @@ const FooterComponents = ({ data }: { data: string[] }) => {
             </li>
           ) : (
             <li
+              key={index}
               className={clsx(
                 "hover:text-[#006A62] transition-colors duration-500"
               )}

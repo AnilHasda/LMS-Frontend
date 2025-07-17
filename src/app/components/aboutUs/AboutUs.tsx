@@ -1,12 +1,14 @@
 import { Sparkles } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 const AboutUs = () => {
   return (
     <div className="h-auto my-5 flex flex-col lg:flex-row gap-20 px-5 md:px-20 lg:px-30 py-10">
       {/* about us profile section */}
-      <section className="order-2 w-full lg:h-auto lg:order-1 flex-1 flex   ">
-        <div className=" group relative h-[300px] sm:h-[500px] bg-[#006A62] flex-1 rounded-3xl">
+      <section className="order-2 w-full  lg:order-1 flex-1 px-5 md:px-0">
+        <div className=" group relative h-[300px] lg:h-full bg-[#006A62] rounded-3xl hover:scale-105 transition-all duration-500">
+          <Image src="/banner_images/about_us.jpg"alt="about_us"fill className="object-cover rounded-3xl"/>
           {/* this is for border  */}
           <div className="absolute -top-3 -left-3 w-12 h-12 border-l-4 border-t-4  border-l-[#006A62] border-t-[#006A62]  transition-all duration-500 rounded-tl-3xl group-hover:scale-110"></div>
           <div className="absolute -top-3 -right-3 w-12 h-12 border-r-4 border-t-4  border-r-[#006A62] border-t-[#006A62]  transition-all duration-500 rounded-tr-3xl group-hover:scale-110"></div>
