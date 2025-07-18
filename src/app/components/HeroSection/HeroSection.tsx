@@ -12,6 +12,7 @@ import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { RegistrationBtn } from "../authcomponents/Registration";
 import useFetchData from "@/app/hooks/FetchData";
 import { useEffect } from "react";
+import { FadeLoader } from "react-spinners";
 const HeroSectionCard = () => {
   const { getData, result, responseError, loading } = useFetchData();
   useEffect(() => {

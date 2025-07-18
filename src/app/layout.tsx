@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
+
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
@@ -32,6 +34,7 @@ export default function RootLayout({
         <div className="max-w-[1600px] mx-auto">
           <Header />
           {children}
+          <Toaster />
           <Footer />
         </div>
       </body>
