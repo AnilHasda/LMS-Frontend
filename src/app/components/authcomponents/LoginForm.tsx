@@ -17,7 +17,7 @@ import usePostData from "@/app/hooks/PostData";
 import toast from "react-hot-toast";
 import { ClipLoader } from "react-spinners";
 
-export function LoginBtn() {
+export function LoginForm() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",

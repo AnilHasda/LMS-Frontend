@@ -6,8 +6,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react"; // You can use any icon set like Lucide or Heroicons
 import clsx from "clsx";
 import ButtonWithBorder from "../ui/ButtonWithBorder";
-import { RegistrationBtn } from "../authcomponents/Registration";
-import { LoginBtn } from "../authcomponents/LoginBtn";
+import { RegistrationForm } from "../authcomponents/RegistrationForm";
+import { LoginForm } from "../authcomponents/LoginForm";
 const navLinks = [
   { href: "/", label: "Home+" },
   { href: "/courses", label: "Courses+" },
@@ -90,10 +90,10 @@ const Header = () => {
       {/* login and register buttons */}
       <div className="relative flex gap-5 md:gap-10 z-30 lg:mr-[8%] items-center">
         <div className="hidden sm:block">
-          <LoginBtn />
+          <LoginForm />
         </div>
         <div>
-          <RegistrationBtn />
+          <RegistrationForm />
         </div>
         <div
           className="h-10 w-10 bg-[#006A62] rounded-sm text-white grid place-content-center md:hidden"

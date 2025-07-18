@@ -3,7 +3,7 @@ import Link from "next/link";
 const SideNav = () => {
   const adminlinks = [
     { item: "Dashboad", label: "/admin/" },
-    { item: "Actions", label: "/admin/action" },
+    { item: "Users", label: "/admin/users" },
     { item: "Courses", label: "/admin/courses" },
     { item: "Others", label: "/admin/others" },
   ];

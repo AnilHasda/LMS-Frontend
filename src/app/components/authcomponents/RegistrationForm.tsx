@@ -26,7 +26,7 @@ import { registrationSchema } from "@/app/@types/registration.schema";
 import usePostData from "@/app/hooks/PostData";
 import { ClipLoader } from "react-spinners";
 
-export function RegistrationBtn() {
+export function RegistrationForm() {
   const [formData, setFormData] = useState<registrationSchema>({
     firstName: "",
     lastName: "",

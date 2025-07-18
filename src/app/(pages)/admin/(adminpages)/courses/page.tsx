@@ -1,9 +1,10 @@
+import { AddCourseForm } from '@/app/admincomponents/AddCourseForm'
 import React from 'react'
 
 const Courses = () => {
   return (
     <div>
-      courses
+      <AddCourseForm />
     </div>
   )
 }

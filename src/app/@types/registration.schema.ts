@@ -1,9 +1,4 @@
 import z from "zod";
-enum Gender {
-  Male = "Male",
-  Female = "Female",
-  Others = "Others",
-}
 const RegistrationSchema = z
   .object({
     firstName: z.string().min(3, "first name must be at least 3 character"),

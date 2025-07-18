@@ -9,7 +9,6 @@ import { AiOutlinePython } from "react-icons/ai";
 import { TbBrandJavascript } from "react-icons/tb";
 import { SiScratch } from "react-icons/si";
 import { LiaLaptopCodeSolid } from "react-icons/lia";
-import { RegistrationBtn } from "../authcomponents/Registration";
 import useFetchData from "@/app/hooks/FetchData";
 import { useEffect } from "react";
 import { FadeLoader } from "react-spinners";
@@ -123,7 +122,6 @@ export const HeroSection = () => {
           </p>
           {/* button section */}
           <div className="mt-8 flex space-x-4">
-            <RegistrationBtn />
             <Link href="/courses">
               <ButtonWithBg background="#006A62">Get Started</ButtonWithBg>
             </Link>

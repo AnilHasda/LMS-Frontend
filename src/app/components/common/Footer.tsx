@@ -63,7 +63,7 @@ const Footer = () => {
           <div className="flex gap-4">
             {socialMedia.map((Ele: React.ComponentType, index: number) => {
               return (
-                <span className=" text-2xl">
+                <span key={index} className=" text-2xl">
                   <Ele />
                 </span>
               );
