@@ -28,12 +28,12 @@ const Courses = () => {
   return (
     <div>
       <AddCourseForm />
-      <div className='flex flex-wrap gap-10'>
+      {/* <div className='flex flex-wrap gap-10'>
        { result?.courses?.map(ele:any=>{
         
         })
       }
-      </div>
+      </div> */}
     </div>
   )
 }
