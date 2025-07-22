@@ -13,10 +13,6 @@ const Users = () => {
       await getData("/admin/get-users");
     })();
   }, []);
-  useEffect(() => {
-    console.log({ axiosError: responseError });
-    if (errorCode === 401) router.push("/");
-  }, [responseError]);
   if (loading)
     return (
       <div className="h-full w-full grid place-content-center">

@@ -1,11 +1,12 @@
 "use client";
-import axiosInstance from "@/lib/axios.config";
+import useAxios from "@/lib/axios.config";
 import { useEffect, useState } from "react";
 const useFetchData = () => {
   const [result, setResult] = useState([]);
   const [responseError, setResponseError] = useState<null | any>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [errorCode,setErrorCode]=useState<number>();
+  const axiosInstance=useAxios();
   const getData = async (url: string) => {
     try {
       setLoading(true);

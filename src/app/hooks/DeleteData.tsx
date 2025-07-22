@@ -1,10 +1,11 @@
 "use client";
-import axiosInstance from "@/lib/axios.config";
+import useAxios from "@/lib/axios.config";
 import { useEffect, useState } from "react";
 const useDeleteData = () => {
   const [result, setResult] = useState([]);
   const [responseError, setResponseError] = useState<null | any>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const axiosInstance=useAxios();
   const deleteData = async (url: string) => {
     try {
       setLoading(true);

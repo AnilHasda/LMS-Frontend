@@ -1,10 +1,11 @@
 "use client";
-import axiosInstance from "@/lib/axios.config";
+import useAxiosMultipart from "@/lib/axiosMultipart.config";
 import { useEffect, useState } from "react";
 const usePostData = () => {
   const [result, setResult] = useState([]);
   const [responseError, setResponseError] = useState<null | any>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const axiosInstance=useAxiosMultipart();
   const postData = async (url: string,formData:any) => {
     try {
       setLoading(true);

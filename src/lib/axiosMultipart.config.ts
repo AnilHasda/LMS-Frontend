@@ -2,13 +2,10 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-const useAxios=({errorMessage}:{errorMessage?:string}={})=>{
+const useAxiosMultipart=({errorMessage}:{errorMessage?:string}={})=>{
   const router=useRouter();
 const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL, 
-  headers: {
-    "Content-Type": "application/json",
-  },
   withCredentials: true,
 });
 
@@ -27,4 +24,4 @@ axiosInstance.interceptors.response.use(
 }
 
 
-export default useAxios;
+export default useAxiosMultipart;

@@ -77,7 +77,10 @@ export function AddCourseForm() {
       courseData.append("thumbnail", thumbnail);
     }
 
-    await postData("/course/create", courseData);
+    await postData("/course/create", courseData,{
+      headers: {
+    "Content-Type": "multipart/form-data", // override the default
+  },});
   };
 
   return (
@@ -199,7 +202,7 @@ export function AddCourseForm() {
               <Button variant="outline">Cancel</Button>
             </DialogClose>
             <Button type="submit">
-              {loading ? <ClipLoader size={15} /> : "Save changes"}
+              {loading ? <ClipLoader size={15} className="text-white"/> : "Save changes"}
             </Button>
           </DialogFooter>
         </form>
