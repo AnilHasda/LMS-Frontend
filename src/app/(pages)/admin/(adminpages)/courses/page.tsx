@@ -1,8 +1,9 @@
 "use client"
-import { AddCourseForm } from '@/app/admincomponents/AddCourseForm'
+import { AddCourseForm } from '@/app/admincomponents/shared/AddCourseForm';
 import React, { useEffect } from 'react'
 import useFetchData from '@/app/hooks/FetchData'
 import { ClipLoader } from 'react-spinners'
+import CourseCard from '@/app/components/course/CourseCard';
 const Courses = () => {
   let {getData,result,loading,responseError}=useFetchData();
   useEffect(() => {
@@ -11,7 +12,8 @@ const Courses = () => {
       })();
     }, []);
     useEffect(()=>{
-      console.log(result);
+
+      console.log({courseDetail:result?.data?.courses});
     },[result])
   if (loading)
     return (
@@ -22,18 +24,20 @@ const Courses = () => {
   if (responseError)
     return (
       <div className="grid place-content-center text-red-500 mt-10 font-bold">
-        something went wrong, please try again later
+       {responseError?.data?.message ? responseError.data.message : "something went wrong, please try again later"}
       </div>
     );
   return (
     <div>
       <AddCourseForm />
-      {/* <div className='flex flex-wrap gap-10'>
-       { result?.courses?.map(ele:any=>{
-        
+      <div className='w-full flex flex-wrap gap-10 justify-center'>
+       {result.data ? result?.data?.courses?.map((ele:any)=>{
+        return <CourseCard key={ele.id} courseData={ele} />
         })
+        :
+        <div>data is not available</div>
       }
-      </div> */}
+      </div>
     </div>
   )
 }

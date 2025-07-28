@@ -1,7 +1,7 @@
 "use client";
 //this component is for admin section
-import React, { useEffect } from "react";
-import { EditForm } from "./EditForm";
+import React, { useState,useEffect } from "react";
+import { EditForm } from "./shared/EditForm";
 import {
   Card,
   CardAction,
@@ -18,6 +18,7 @@ import toast from "react-hot-toast";
 import { ClipLoader } from "react-spinners";
 
 const ProfileCard = ({ userdata }: any) => {
+  const [isEdit,setIsEdit]=useState(false);
   const {deleteData,result,loading,responseError}=useDeleteData();
   useEffect(()=>{
     if(result?.success) toast.success(result?.message || "user removed successfully");

@@ -9,7 +9,7 @@ const useUpdateData = () => {
   const updateData = async (url: string, updateData: any) => {
     try {
       setLoading(true);
-      const { data } = await axiosInstance.post(url, updateData);
+      const { data } = await axiosInstance.patch(url, updateData);
       setResult(data);
     } catch (error: any) {
       setResponseError(error.response?.data?.message || "Something went wrong");

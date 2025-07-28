@@ -1,15 +1,14 @@
 import React from "react";
 import SideNav from "../../components/common/SideNav";
-const adminlinks = [
-    { item: "Dashboad", label: "/admin/" },
-    { item: "Users", label: "/admin/users" },
-    { item: "Courses", label: "/admin/courses" },
-    { item: "Others", label: "/admin/others" },
+const instructorlinks = [
+    { item: "Dashboad", label: "/instructor/" },
+    { item: "Courses", label: "/instructor/courses" },
+    { item: "Others", label: "/instructor/others" },
   ];
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex">
-        <SideNav links={adminlinks}/>
+        <SideNav links={instructorlinks}/>
       <div className="flex-1 min-h-screen">{children}</div>
     </div>
   );

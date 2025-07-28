@@ -20,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import usePostData from "@/app/hooks/PostData";
+import useUpdateData from "@/app/hooks/UpdateData";
 import { ClipLoader } from "react-spinners";
 
 export function EditForm({user}:{user:any}) {
@@ -31,7 +31,7 @@ export function EditForm({user}:{user:any}) {
     class: undefined,
     gender: "",
   });
-  const { postData, loading, result, responseError } = usePostData();
+  const { updateData, loading, result, responseError } = useUpdateData();
 
   useEffect(() => {
     console.log(formData);
@@ -57,13 +57,13 @@ export function EditForm({user}:{user:any}) {
       delete formData.class;
     }
 
-    await postData(`/user/uupdate-user/${user?.id}`, formData);
+    await updateData(`/user/update-user/${user?.id}`, formData);
   };
 
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className=" outline-0">Edit </Button>
+        <Button className=" outline-0"> Edit </Button>
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-[425px] max-h-[90vh] overflow-y-auto">

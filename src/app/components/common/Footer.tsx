@@ -31,7 +31,7 @@ const privacyPolicy = ["privacy", "terms of services"];
 const socialMedia = [FaFacebook, FaSquareXTwitter, FaLinkedin, FaGithub];
 const Footer = () => {
   return (
-    <div className="bg-[#FFF5F0] relative  h-auto">
+    <div className="bg-[#FFF5F0] relative  h-auto mt-20">
       {/*  */}
       <div className="absolute h-20 w-11/12 md:w-1/2 bg-[#FF8C5A] -top-10 left-[50%] translate-x-[-50%] text-white grid place-content-center">
         <div className="flex gap-2 animate-bounce">

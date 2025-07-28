@@ -52,19 +52,19 @@ interface CourseDataType{
 }
 const CourseCard = ({ courseData }:{courseData:CourseType} ) => {
   const {deleteData ,result,loading,responseError}=useDeleteData();
+  console.log({courseData})
   useEffect(()=>{
     if(result?.success) toast.success(result?.message || "course removed successfully");
     if(responseError) toast.success(responseError || "failed to remove course");
   },[responseError,result])
   return (
     <Card className="w-[300px]">
-      <CardHeader className="relative">
+      <CardHeader className="relative h-[200px]">
         <Image
           src={courseData.thumbnail ? courseData.thumbnail : "/courses/default.jpg"}
           alt="course_thumbnail"
-          height={300}
-          width={0}
-          className="w-full object-cover"
+          fill
+          className=""
         />
       </CardHeader>
       <CardContent>
