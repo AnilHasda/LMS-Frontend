@@ -1,6 +1,7 @@
 import { Quote, Sparkles } from "lucide-react";
 import { AiOutlinePython } from "react-icons/ai";
 import CourseCard from "./CourseCard";
+import Link from "next/link";
 const Courses = () => {
   return (
     <section className="w-full my-20 px-5 md:px-20 lg:px-30">
@@ -24,20 +25,22 @@ const Courses = () => {
           <Quote />
         </span> */}
       </p>
-      {/* course card section */}
-      <div className="flex flex-wrap justify-center gap-5 mt-10">
-        {[...new Array(5)].map((ele: any, index: number) => {
-          return (
-            <CourseCard
-              key={index}
-              icon={AiOutlinePython}
-              heading="Python Programming"
-              level="Beginner"
-              description="basic python programming, beginner friendly, practical base"
-            />
-          );
-        })}
-      </div>
+      {/* course card section */}|
+      <Link href="/course-details">
+        <div className="flex flex-wrap justify-center gap-5 mt-10">
+          {[...new Array(5)].map((ele: any, index: number) => {
+            return (
+              <CourseCard
+                key={index}
+                icon={AiOutlinePython}
+                heading="Python Programming"
+                level="Beginner"
+                description="basic python programming, beginner friendly, practical base"
+              />
+            );
+          })}
+        </div>
+      </Link>
     </section>
   );
 };
