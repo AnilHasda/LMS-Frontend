@@ -10,7 +10,7 @@ const Users = () => {
   const router = useRouter();
   useEffect(() => {
     (async () => {
-      await getData("/admin/get-users");
+      await getData("/user");
     })();
   }, []);
   if (loading)

@@ -1,45 +1,87 @@
-"use client"
-import { AddCourseForm } from '@/app/admincomponents/shared/AddCourseForm';
-import React, { useEffect } from 'react'
-import useFetchData from '@/app/hooks/FetchData'
-import { ClipLoader } from 'react-spinners'
-import CourseCard from '@/app/components/course/CourseCard';
+"use client";
+import { AddCourseForm } from "@/app/admincomponents/shared/AddCourseForm";
+import React, { useEffect, useState } from "react";
+import useFetchData from "@/app/hooks/FetchData";
+import { ClipLoader } from "react-spinners";
+import CourseCard from "@/app/components/course/CourseCard";
+import { Search } from "lucide-react";
+
 const Courses = () => {
-  let {getData,result,loading,responseError}=useFetchData();
+  const { getData, result, loading, responseError } = useFetchData();
+  const [searchTerm, setSearchTerm] = useState("");
+
   useEffect(() => {
-      (async () => {
-        await getData("/course/");
-      })();
-    }, []);
-    useEffect(()=>{
+    (async () => {
+      await getData("/course/");
+    })();
+  }, []);
 
-      console.log({courseDetail:result?.data?.courses});
-    },[result])
-  if (loading)
-    return (
-      <div className="h-full w-full grid place-content-center">
-        <ClipLoader />
-      </div>
-    );
-  if (responseError)
-    return (
-      <div className="grid place-content-center text-red-500 mt-10 font-bold">
-       {responseError?.data?.message ? responseError.data.message : "something went wrong, please try again later"}
-      </div>
-    );
+  useEffect(() => {
+    console.log({ courseDetail: result?.data?.courses });
+  }, [result]);
+
+  // client-side filter
+  const filteredCourses =
+    result?.data?.courses?.filter((course: any) =>
+      (course.title || "").toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
+
   return (
-    <div>
-      <AddCourseForm />
-      <div className='w-full flex flex-wrap gap-10 justify-center'>
-       {result.data ? result?.data?.courses?.map((ele:any)=>{
-        return <CourseCard key={ele.id} courseData={ele} />
-        })
-        :
-        <div>data is not available</div>
-      }
-      </div>
-    </div>
-  )
-}
+    <div className="p-6">
+      {/* Top Section: Search (left) + Single Add Button (right) */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        {/* Search Bar - grows to fill available space */}
+        <div className="flex items-center border rounded-lg overflow-hidden shadow-sm bg-white flex-1">
+          <Search className="ml-3 text-gray-500" size={18} />
+          <input
+            type="text"
+            placeholder="Search courses..."
+            className="p-2 flex-1 outline-none text-sm"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
 
-export default Courses
+        {/* Single Add Course Button on the right */}
+             {/* Add Course Form */}
+      <div id="add-course-section" className="">
+        <AddCourseForm />
+      </div>
+      </div>
+
+      {/* Courses Area - loader / error / list */}
+      <div className="w-full flex flex-wrap gap-6 justify-center min-h-[180px]">
+        {loading ? (
+          // centered loader inside the courses area
+          <div className="w-full h-40 grid place-content-center">
+            <ClipLoader />
+          </div>
+        ) : responseError ? (
+          // error message shown in-place where courses would be
+          <div className="w-full max-w-2xl bg-red-50 border border-red-200 rounded-lg p-6 text-center shadow-sm">
+            <h3 className="text-lg font-semibold text-red-700 mb-2">
+              Something went wrong
+            </h3>
+            <p className="text-sm text-red-600">
+              {responseError?.data?.message ||
+                "Unable to load courses right now. Please try again later."}
+            </p>
+          </div>
+        ) : filteredCourses.length > 0 ? (
+          filteredCourses.map((ele: any) => (
+            <CourseCard key={ele.id} courseData={ele} />
+          ))
+        ) : (
+          // empty state shown in the same area
+          <div className="w-full text-center text-gray-500 font-medium">
+            No courses found.
+          </div>
+        )}
+      </div>
+
+
+    </div>
+  );
+};
+
+export default Courses;

@@ -4,11 +4,11 @@ const RegistrationSchema = z
     firstName: z.string().min(3, "first name must be at least 3 character"),
     lastName: z.string().min(3, "last name must be at least 3 character"),
     email: z.email("Invalid email"),
-    gender: z
-      .string()
-      .refine((value) => ["Male", "Female", "Others"].includes(value), {
-        message: "please choose valid gender",
-      }),
+    // gender: z
+    //   .string()
+    //   .refine((value) => ["Male", "Female", "Others"].includes(value), {
+    //     message: "please choose valid gender",
+    //   }),
     class: z.int("class should be integer").optional(),
     password: z
       .string()

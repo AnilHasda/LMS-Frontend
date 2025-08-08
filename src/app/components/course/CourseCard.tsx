@@ -1,5 +1,6 @@
 import Image from "next/image";
-interface CourseCardProps {
+
+interface CourseData {
   icon: React.ElementType | string;
   heading: string;
   level: "Beginner" | "Intermediate" | "Advanced";
@@ -7,17 +8,19 @@ interface CourseCardProps {
   duration?: string;
 }
 
-const CourseCard = ({
-  icon: Icon,
-  heading,
-  level,
-  description,
-  duration = "3 months",
-}: CourseCardProps) => {
+interface CourseCardProps {
+  courseData: CourseData;
+}
+
+const CourseCard = ({ courseData }: CourseCardProps) => {
+  const { icon: Icon, heading, level, description, duration = "3 months" } = courseData;
+
   return (
-    <div className=" group w-full md:max-w-[230px]  bg-[#FFF5F0] cursor-pointer rounded-xl flex flex-col gap-3 py-4 border-b-2 border-b-[#006A62] hover:text-white hover:bg-[#006A62]  hover:border-b hover:border-b-[#FF8C5A] transition-all duration-500 hover:shadow-2xl hover:scale-110 ">
+    <div className="group w-full md:max-w-[230px] bg-[#FFF5F0] cursor-pointer rounded-xl flex flex-col gap-3 py-4 border-b-2 border-b-[#006A62] hover:text-white hover:bg-[#006A62] hover:border-b hover:border-b-[#FF8C5A] transition-all duration-500 hover:shadow-2xl hover:scale-110">
       {typeof Icon === "string" ? (
-        <Image src={Icon} alt="course_image" fill className="object-cover" />
+        <div className="relative h-32 w-full">
+          <Image src={Icon} alt="course_image" fill className="object-cover rounded-t-xl" />
+        </div>
       ) : (
         <Icon className="text-[#006A62] mx-auto text-6xl group-hover:text-white transition-colors duration-500" />
       )}

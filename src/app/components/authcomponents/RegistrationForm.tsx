@@ -32,7 +32,6 @@ export function RegistrationForm() {
     lastName: "",
     email: "",
     class: undefined,
-    gender: "",
     password: "",
     confirmPassword: "",
     profile:undefined,
@@ -73,7 +72,6 @@ export function RegistrationForm() {
     userData.append("firstName", formData.firstName);
     userData.append("lastName", formData.lastName);
     userData.append("email", formData.email);
-    userData.append("gender", formData.gender);
     userData.append("password", formData.password);
 
     if (typeof formData.class !== "undefined") {
@@ -139,26 +137,7 @@ export function RegistrationForm() {
               />
             </div>
 
-            <div className="grid gap-3">
-              <Label htmlFor="gender">
-                <span className="text-[red] text-xl">*</span> gender
-              </Label>
-              <Select
-                name="gender"
-                onValueChange={(value) =>
-                  setFormData((prev) => ({ ...prev, gender: value }))
-                }
-              >
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Select gender" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="Male">Male</SelectItem>
-                  <SelectItem value="Female">Female</SelectItem>
-                  <SelectItem value="Others">Others</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+  
 
             <div className="grid gap-3">
               <Label htmlFor="class">class</Label>
